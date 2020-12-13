@@ -1,0 +1,2 @@
+#!/usr/bin/env bash
+dd if=/dev/urandom of=big.data count=20004800

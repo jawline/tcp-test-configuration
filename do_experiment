@@ -1,0 +1,12 @@
+while read p; do
+  echo "# Starting test with $p"
+  echo "# $p"
+  ./configure_settings "${p}"
+
+  echo "# Sleeping"
+  sleep 240
+
+  echo "# Going"
+  timeout 10m curl http://dev.parsed.uk/100mb.data --output /dev/null
+
+done < test.txt 
